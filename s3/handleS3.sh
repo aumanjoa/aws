@@ -11,3 +11,5 @@ aws s3api put-object-acl --bucket joachim-hello-aws --key index.html --acl publi
 aws cloudfront create-distribution \
   --origin-domain-name joachim-hello-aws.s3.eu-central-1.amazonaws.com \
   --default-root-object index.html
+
+#https://d2q47f3428j8u0.cloudfront.net/
