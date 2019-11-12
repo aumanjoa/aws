@@ -1,4 +1,4 @@
-Configure Docker to start on boot
+Configure Docker to start on root
 
 ```bash
 sudo systemctl enable docker
