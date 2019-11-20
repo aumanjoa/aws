@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-aws
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: hello-aws
