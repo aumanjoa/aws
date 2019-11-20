@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-aws
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-aws
+  template:
+    metadata:
+      labels:
+        app: hello-aws
+    spec:
+      containers:
+      - name: hello-aws
+        image: aumanjoa/aws-hello
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "150m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"        
+        ports:
+        - containerPort: 80        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-aws-svc
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: hello-aws
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-aws-ingress
+spec:
+  rules:
+  - host: aef1514ae0a4811eabdc006c2be819e8-416605967.eu-central-1.elb.amazonaws.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hello-aws-svc
+          servicePort: 80
