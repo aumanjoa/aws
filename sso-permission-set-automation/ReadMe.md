@@ -9,4 +9,25 @@ This code allows for managing the accounts assigned to a permission set in AWS S
 ## Prerequisites
 
 - AWS CLI configured with credentials that have permissions to call Organizations and SSO
-- Boto3 installed
+- Python 3.7+
+- boto3 Python library
+
+
+## Installation
+
+```
+pip install boto3
+``` 
+
+## Usage
+
+```
+python3 sso-organisation.py
+
+``` 
+
+## To use this in AWS Lambda:
+
+1. Create a Lambda function using Runtime Python 3.10
+2. Add the required permissions and environment variables ( small code changes requered)
+3. Test invoking the Lambda function
