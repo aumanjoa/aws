@@ -22,7 +22,7 @@ pip install boto3
 ## Usage
 
 ```
-python3 sso-organisation.py
+python3 sso-permission-set-automation.py
 
 ``` 
 
