@@ -81,8 +81,9 @@ ou_id = 'ou-ID'
 permission_set_arn = 'arn:aws:sso:::permissionSet/ARN'
 sso_instance_arn = 'arn:aws:sso:::instance/ARN'
 sso_group_id = 'GROUP-ID'
+accountId_to_remove_from_permission_set  = '123456789012'
 
 
 add_all_accounts_from_ou_to_permission_set(ou_id, permission_set_arn, sso_instance_arn, sso_group_id)
 
-remove_accounts_from_permission_set('123456789012', permission_set_arn, sso_instance_arn, sso_group_id)
+remove_accounts_from_permission_set(accountId_to_remove_from_permission_set, permission_set_arn, sso_instance_arn, sso_group_id)

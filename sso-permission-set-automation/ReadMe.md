@@ -8,6 +8,16 @@ This code allows for managing the accounts assigned to a permission set in AWS I
 
 ## Prerequisites
 
+Prerequisites you need from your AWS account:
+
+- ou_id (str): The ID of the organization unit that you want to add all accounts from to the permission set. (For exmaple ou-ID)
+- permission_set_arn (str): The ARN of the permission set that you want to add the accounts to.
+- sso_instance_arn (str): The ARN of the AWS SSO instance that the permission set belongs to.
+- sso_principle_id (str): The principal ID (user or group) to assign the permission set to.
+- accountId_to_remove_from_permission_set (str): The Amazon Web Services account identifier, (For example, 123456789012).
+
+Technical Prerequisites:
+
 - AWS CLI configured with credentials that have permissions to call AWS Organizations and AWS IAM Identity Center
 - Python 3.7+
 - boto3 Python library
